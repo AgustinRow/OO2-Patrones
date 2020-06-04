@@ -71,35 +71,6 @@ Directorio >> listadoDeContenido [
 ]
 
 { #category : #streams }
-Directorio >> miContenido [
-	| otroStream cantArchivos |
-	otroStream := WriteStream on: String new.
-	otroStream << self miDireccion contents.
-	cantArchivos := self contenido
-		inject: 0
-		into: [ :sum :each | sum + each seCuentaParaListar ].
-	cantArchivos > 0
-		ifTrue: [ (self
-				escribirCantidadDeArchivos:
-					(self contenido inject: 0 into: [ :sum :each | sum + each seCuentaParaListar ])
-				enStream: otroStream) contents ].
-	^ otroStream contents
-]
-
-{ #category : #streams }
-Directorio >> miContenido: unStream [
-	| cantArchivos |
-	 unStream << self miDireccion contents.
-	cantArchivos := self contenido count: [ :each | each seCuentaParaListar  ].
-	cantArchivos > 0
-		ifTrue: [ (self
-				escribirCantidadDeArchivos:
-					(cantArchivos)
-				enStream: unStream) contents ].
-	^unStream contents
-]
-
-{ #category : #streams }
 Directorio >> miDireccion [
 	^ ('/', self nombre)
 ]
@@ -112,25 +83,6 @@ Directorio >> nombre [
 { #category : #accessing }
 Directorio >> seCuentaParaListar [ 
 ^false
-]
-
-{ #category : #streams }
-Directorio >> subDirectorio: unStream [
-	| cantArchivos |
-	"stream nextPutAll: (unStream contents)."
-	"stream nextPutAll: self miContenido contents."
-	"stream cr."
-	"unStream nextPutAll: self miDireccion.".
-	unStream << self miDireccion contents.
-	cantArchivos := self contenido
-		count: [ :each | each seCuentaParaListar ].
-	cantArchivos > 0
-		ifTrue: [ (self escribirCantidadDeArchivos: cantArchivos enStream: unStream)
-				contents ].
-	unStream cr.
-	self contenido
-		do: [ :each | (each subDirectorio: unStream) contents ].
-	^ unStream contents
 ]
 
 { #category : #streams }

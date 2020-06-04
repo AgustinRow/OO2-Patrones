@@ -7,6 +7,11 @@ Class {
 	#category : #'OO2-TP4-ToDoList-Model'
 }
 
+{ #category : #adding }
+ToDoItem >> addComment: aComment [
+comment:= aComment.
+]
+
 { #category : #accessing }
 ToDoItem >> finish: aToDoList [ 
 ]

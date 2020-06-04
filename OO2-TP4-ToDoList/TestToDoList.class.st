@@ -2,8 +2,8 @@ Class {
 	#name : #TestToDoList,
 	#superclass : #TestCase,
 	#instVars : [
-		'toDo',
-		'time'
+		'time',
+		'toDoList'
 	],
 	#category : #'OO2-TP4-ToDoList-Test'
 }
@@ -12,26 +12,45 @@ Class {
 TestToDoList >> setUp [ 
 
 time:= Time now.
-toDo := ToDoList name: 'Mi ToDoList'.
+toDoList := ToDoList name: 'Mi ToDoList'.
 
+]
+
+{ #category : #tests }
+TestToDoList >> testFinish [
+|timex|
+toDoList start.
+toDoList tooglePause.
+timex:= toDoList workedTime.
+self deny: toDoList workedTime equals: timex.
+toDoList start.
+toDoList finish. 
+timex:= toDoList workedTime.
+self assert: toDoList workedTime equals: timex.
+]
+
+{ #category : #tests }
+TestToDoList >> testPending [
+
+self should: [toDoList workedTime] raise: Error
 ]
 
 { #category : #tests }
 TestToDoList >> testSart [
-	self should: [ toDo workedTime  ] raise: Error.
-	toDo start.
-	self shouldnt: [ toDo workedTime  ] raise: Error.
+	self should: [ toDoList workedTime  ] raise: Error.
+	toDoList start.
+	self shouldnt: [ toDoList workedTime  ] raise: Error.
 ]
 
 { #category : #tests }
 TestToDoList >> testTooglePaused [
-	toDo start.
-	toDo tooglePause.
-	self shouldnt: [ toDo tooglePause ] raise: Error 
+	toDoList start.
+	toDoList tooglePause.
+	self shouldnt: [ toDoList tooglePause ] raise: Error 
 ]
 
 { #category : #tests }
 TestToDoList >> testWorkedTime [
-	toDo start.
-	self assert: toDo workedTime < time asDuration
+	toDoList start.
+	self assert: toDoList workedTime < time asDuration
 ]

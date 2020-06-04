@@ -24,11 +24,6 @@ Archivo >> seCuentaParaListar [
 ]
 
 { #category : #comparing }
-Archivo >> subDirectorio: unStream [
-^''
-]
-
-{ #category : #comparing }
 Archivo >> subDirectorio: unStream conPath: unPath [ 
 ^''
 ]

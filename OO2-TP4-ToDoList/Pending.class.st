@@ -7,7 +7,7 @@ Class {
 { #category : #accessing }
 Pending >> start: aToDoList [ 
 aToDoList state: (InProgress new ).
-aToDoList setTime
+aToDoList initializeTime
 ]
 
 { #category : #accessing }

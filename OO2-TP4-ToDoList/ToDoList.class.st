@@ -27,19 +27,19 @@ ToDoList >> finish [
 state finish: self
 ]
 
+{ #category : #initialization }
+ToDoList >> initializeTime [
+timestan := DateAndTime now.
+]
+
 { #category : #actions }
 ToDoList >> myDuration [
-^timestan asDuration - Time now asDuration.
+	^ (timestan asDuration - Time now asDuration)
 ]
 
 { #category : #accessing }
 ToDoList >> name: aName [
 name:= aName 
-]
-
-{ #category : #initialization }
-ToDoList >> setTime [
-timestan := DateAndTime now.
 ]
 
 { #category : #accessing }
@@ -50,6 +50,16 @@ state start: self
 { #category : #accessing }
 ToDoList >> state: aState [
 state:= aState 
+]
+
+{ #category : #'system-api' }
+ToDoList >> stopTimer [
+timestan := self myDuration.
+]
+
+{ #category : #accessing }
+ToDoList >> timestan [ 
+^timestan 
 ]
 
 { #category : #actions }

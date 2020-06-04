@@ -34,11 +34,6 @@ Elemento >> seCuentaParaListar [
 ^self subclassResponsibility 
 ]
 
-{ #category : #streams }
-Elemento >> subDirectorio: unStream [
-^self subclassResponsibility 
-]
-
 { #category : #accessing }
 Elemento >> tamaño [ 
 ^tamaño

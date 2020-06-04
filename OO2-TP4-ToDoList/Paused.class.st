@@ -6,7 +6,8 @@ Class {
 
 { #category : #action }
 Paused >> finish: aToDoList [
-aToDoList state: (Finished new)
+aToDoList state: (Finished new).
+aToDoList stopTimer.
 ]
 
 { #category : #action }
