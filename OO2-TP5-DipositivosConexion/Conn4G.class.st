@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Conn4G >> intialize [
+Conn4G >> initialize [
 symbol:= '4GConnection'
 ]
 
@@ -24,6 +24,6 @@ stream:= WriteStream on: String new.
 stream <<'WifiConnfig sent: '.
 stream << aString.
 stream <<'with crcNumber:  '.
-stream << anInteger.
+stream << anInteger asString.
 Transcript show: (stream contents).
 ]

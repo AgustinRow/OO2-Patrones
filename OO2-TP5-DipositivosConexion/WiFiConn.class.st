@@ -22,6 +22,6 @@ stream:= WriteStream on: String new.
 stream <<'WifiConnfig sent: '.
 stream << aString.
 stream <<'with crcNumber:  '.
-stream << anInteger.
+stream << anInteger asString .
 Transcript show: (stream contents).
 ]

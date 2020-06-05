@@ -12,9 +12,9 @@ Class {
 
 { #category : #configuration }
 Dispositivo >> conectarCon: unaConexion [
-self connection: unaConexion.
-ringer ring.
-display showBanner: unaConexion pict. 
+	self connection: unaConexion.
+	ringer ring.
+	display showBanner: self connection pict
 ]
 
 { #category : #configuration }
