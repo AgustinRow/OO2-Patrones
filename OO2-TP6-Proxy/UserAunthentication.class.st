@@ -1,5 +1,5 @@
 Class {
-	#name : #Authentication,
+	#name : #UserAunthentication,
 	#superclass : #Object,
 	#instVars : [
 		'authenticated'
@@ -8,16 +8,16 @@ Class {
 }
 
 { #category : #accessing }
-Authentication >> authenticated [ 
+UserAunthentication >> authenticated [ 
 ^authenticated 
 ]
 
 { #category : #'as yet unclassified' }
-Authentication >> changeAcces [
+UserAunthentication >> changeAcces [
 authenticated := authenticated not.
 ]
 
 { #category : #initialize }
-Authentication >> initialize [ 
+UserAunthentication >> initialize [ 
 authenticated  := false.
 ]

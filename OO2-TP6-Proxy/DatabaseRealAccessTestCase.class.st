@@ -14,7 +14,7 @@ DatabaseRealAccessTestCase >> setUp [
 	"Hooks that subclasses may override to define the fixture of test."
 
 	database := DatabaseRealAcess new.
-	user := Authentication new.
+	user := UserAunthentication new.
 	proxy:= DatabaseRealAcessProxy newProxyWith: database andUserAuthentication: user
 ]
 
