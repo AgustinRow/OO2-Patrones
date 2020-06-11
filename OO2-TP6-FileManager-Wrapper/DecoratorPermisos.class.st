@@ -4,7 +4,7 @@ Class {
 	#category : #'OO2-TP6-FileManager-Wrapper'
 }
 
-{ #category : #'menu commands' }
-DecoratorPermisos >> prettyPrint [
-	^ super prettyPrint , (self concatena: self permisos)
+{ #category : #'as yet unclassified' }
+DecoratorPermisos >> printMySelf [
+^self permisos.
 ]

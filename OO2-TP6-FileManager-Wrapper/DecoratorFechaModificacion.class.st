@@ -8,3 +8,8 @@ Class {
 DecoratorFechaModificacion >> prettyPrint [ 
 	^ super prettyPrint , (self concatena: self fechaModificacion asDate )
 ]
+
+{ #category : #'as yet unclassified' }
+DecoratorFechaModificacion >> printMySelf [
+^self fechaModificacion 
+]

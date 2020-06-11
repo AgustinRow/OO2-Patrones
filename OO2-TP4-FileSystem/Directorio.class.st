@@ -66,13 +66,13 @@ Directorio >> listadoDeContenido [
 	| unStream unPath |
 	unStream := WriteStream on: String new.
 	unPath  := WriteStream on: String new.
-	^(self subDirectorio: unStream conPath: unPath ).
+	^(self subDirectorio: unStream conPath: '').
 	
 ]
 
 { #category : #streams }
 Directorio >> miDireccion [
-	^ ('/', self nombre)
+	^ ('/', self nombre) contents 
 ]
 
 { #category : #accessing }
@@ -88,17 +88,22 @@ Directorio >> seCuentaParaListar [
 { #category : #streams }
 Directorio >> subDirectorio: unStream conPath: unPath [
 	| cantArchivos |
+	
+	unStream size >0
+		ifTrue: [ unStream cr ].
+		
 	unStream << unPath contents.
-	unStream << self miDireccion contents.
+	unStream << self miDireccion.
+	
 	cantArchivos := self contenido
 		count: [ :each | each seCuentaParaListar ].
 	cantArchivos > 0
 		ifTrue: [ (self escribirCantidadDeArchivos: cantArchivos enStream: unStream)
 				contents ].
-	unPath nextPutAll: self miDireccion.
-	unStream ensureCr.
+			
 	self contenido
-		do: [ :each | each subDirectorio: unStream conPath: unPath ].
+		do:
+			[ :each | each subDirectorio: unStream conPath: (unPath, self miDireccion) ].
 	^ unStream contents
 ]
 

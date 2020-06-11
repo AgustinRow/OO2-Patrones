@@ -104,7 +104,7 @@ DirectorioTest >> testListadoCon2Directorios [
 	listadoStream
 		<< '/prueba/mysql (1 archivos)';
 		cr.
-	listadoStream << '/prueba/mysql/older (1 archivos)'; cr.
+	listadoStream << '/prueba/mysql/older (1 archivos)'.
 	self
 		assert: con2Dir listadoDeContenido
 		equals: listadoStream contents
@@ -117,7 +117,7 @@ DirectorioTest >> testListadoDeContenido [
 	listadoStream << '/log (1 archivos)'; cr.
 	listadoStream << '/log/mysql (4 archivos)'; cr.
 	listadoStream << '/log/mysql/older (1 archivos)'; cr.
-	listadoStream << '/log/mysql/postgres (3 archivos)'; cr.
+	listadoStream << '/log/postgres (3 archivos)'.
 	listado := listadoStream contents.
 	self assert: conSubdirectorios listadoDeContenido = listado
 ]

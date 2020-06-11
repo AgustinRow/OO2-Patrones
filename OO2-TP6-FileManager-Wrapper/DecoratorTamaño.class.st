@@ -8,3 +8,8 @@ Class {
 DecoratorTamaño >> prettyPrint [
 	^ super prettyPrint , (self concatena: self tamaño)
 ]
+
+{ #category : #'as yet unclassified' }
+DecoratorTamaño >> printMySelf [
+^self tamaño
+]

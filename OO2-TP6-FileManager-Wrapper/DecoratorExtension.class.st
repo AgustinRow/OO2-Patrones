@@ -4,7 +4,7 @@ Class {
 	#category : #'OO2-TP6-FileManager-Wrapper'
 }
 
-{ #category : #'menu commands' }
-DecoratorExtension >> prettyPrint [
-	^ super prettyPrint , (self concatena: self extension)
+{ #category : #'as yet unclassified' }
+DecoratorExtension >> printMySelf [ 
+^self extension 
 ]

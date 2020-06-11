@@ -50,8 +50,17 @@ DecoratorFile >> permisos [
 ]
 
 { #category : #'menu commands' }
-DecoratorFile >> prettyPrint [ 
-^component prettyPrint 
+DecoratorFile >> prettyPrint [
+	| unString |
+	unString := component prettyPrint.
+	unString isNotEmpty
+		ifTrue: [ ^ (unString , (' - ' , self printMySelf)) ].
+		^self printMySelf. 
+]
+
+{ #category : #'as yet unclassified' }
+DecoratorFile >> printMySelf [
+^self subclassResponsibility 
 ]
 
 { #category : #accessing }

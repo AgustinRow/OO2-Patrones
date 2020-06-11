@@ -6,5 +6,10 @@ Class {
 
 { #category : #accessing }
 DecoratorFechaCreacion >> prettyPrint [
-	^ super prettyPrint , (self concatena: self fechaCreacion asDate )
+	^ component prettyPrint , (self concatena: self fechaCreacion asDate )
+]
+
+{ #category : #'as yet unclassified' }
+DecoratorFechaCreacion >> printMySelf [
+^self fechaCreacion 
 ]
