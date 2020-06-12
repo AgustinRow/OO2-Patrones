@@ -63,9 +63,8 @@ contenido:= OrderedCollection new.
 
 { #category : #public }
 Directorio >> listadoDeContenido [
-	| unStream unPath |
+	| unStream |
 	unStream := WriteStream on: String new.
-	unPath  := WriteStream on: String new.
 	^(self subDirectorio: unStream conPath: '').
 	
 ]
@@ -73,11 +72,6 @@ Directorio >> listadoDeContenido [
 { #category : #streams }
 Directorio >> miDireccion [
 	^ ('/', self nombre) contents 
-]
-
-{ #category : #accessing }
-Directorio >> nombre [ 
-^nombre
 ]
 
 { #category : #accessing }
@@ -105,11 +99,6 @@ Directorio >> subDirectorio: unStream conPath: unPath [
 		do:
 			[ :each | each subDirectorio: unStream conPath: (unPath, self miDireccion) ].
 	^ unStream contents
-]
-
-{ #category : #accessing }
-Directorio >> tamaño [ 
-^super
 ]
 
 { #category : #public }

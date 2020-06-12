@@ -1,6 +1,6 @@
 Class {
 	#name : #Pending,
-	#superclass : #ToDoItem,
+	#superclass : #State,
 	#category : #'OO2-TP5-ToDoList-Model'
 }
 

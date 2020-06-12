@@ -1,9 +1,6 @@
 Class {
 	#name : #Temporario,
 	#superclass : #Empleados,
-	#instVars : [
-		'horas'
-	],
 	#category : #'OO2-TP4-CalculoSueldos-Model'
 }
 
@@ -15,26 +12,17 @@ Temporario class >> nombre: unNombre fechaIngreso: unaFecha esCasado: aBoolean c
 		fechaIngreso: unaFecha
 		esCasado: aBoolean
 		cantHijos: cantidadHijos)
-		initializeCantidadHoras: cantidadHoras;
+		initializeCantidadHoras: cantidadHoras andPrecio: 10;
 		yourself
 ]
 
 { #category : #'as yet unclassified' }
 Temporario >> adicional [
-	^ ((self cantidadDeHijos * 100) + self estaCasado)
+	^ ((self cantidadDeHijos * 100) + self adicionalSiEsCasado)
 ]
 
 { #category : #'as yet unclassified' }
 Temporario >> basico [
-	^ self sueldoBase + (self cantidadHoras  * 10)
-]
-
-{ #category : #'as yet unclassified' }
-Temporario >> cantidadHoras [
-^horas
-]
-
-{ #category : #'as yet unclassified' }
-Temporario >> initializeCantidadHoras: cantidadHoras [
-horas:= cantidadHoras 
+"el "
+	^ self sueldoBase + (self cantidadHoras  * self precioHora)
 ]

@@ -17,7 +17,7 @@ Planta class >> nombre: unNombre fechaIngreso: unaFecha esCasado: aBoolean cantH
 
 { #category : #'as yet unclassified' }
 Planta >> adicional [ 
-^ self estaCasado + self adicionalHijos+ self adicionalAntiguedad
+^ self adicionalSiEsCasado + self adicionalHijos+ self adicionalAntiguedad
 ]
 
 { #category : #'as yet unclassified' }

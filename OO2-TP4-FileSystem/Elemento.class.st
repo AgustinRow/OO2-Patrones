@@ -21,6 +21,11 @@ Elemento >> fecha [
 ^fecha
 ]
 
+{ #category : #accessing }
+Elemento >> nombre [ 
+^nombre
+]
+
 { #category : #initialization }
 Elemento >> nombre: unNombre fecha:unaFecha tamaño: unTamaño [
 

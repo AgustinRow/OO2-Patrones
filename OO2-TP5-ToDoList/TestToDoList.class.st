@@ -12,7 +12,7 @@ Class {
 TestToDoList >> setUp [ 
 
 time:= Time now.
-toDoList := ToDoList name: 'Mi ToDoList'.
+toDoList := ToDoItem name: 'Mi ToDoList'.
 
 ]
 

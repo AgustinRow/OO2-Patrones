@@ -1,6 +1,6 @@
 Class {
 	#name : #InProgress,
-	#superclass : #ToDoItem,
+	#superclass : #State,
 	#category : #'OO2-TP5-ToDoList-Model'
 }
 

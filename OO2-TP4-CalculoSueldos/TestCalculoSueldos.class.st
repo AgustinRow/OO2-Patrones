@@ -20,7 +20,11 @@ planta:= Planta nombre: 'Pedro' fechaIngreso: '2010-1-1' esCasado: false  cantHi
 { #category : #testing }
 TestCalculoSueldos >> testSueldo [
 
-self assert: temporario sueldo equals: 4319.
-self assert: pasante sueldo equals: 1930.
-self assert: planta sueldo equals: 3845.
+self assert: temporario calcularSueldoSinAporte equals: 4319.
+self assert: pasante calcularSueldoSinAporte equals: 1930.
+self assert: planta calcularSueldoSinAporte equals: 3845.
+
+self assert: temporario sueldo equals: 4189.43.
+self assert: pasante sueldo equals: 1910.7.
+self assert: planta sueldo equals: 3768.1.
 ]
